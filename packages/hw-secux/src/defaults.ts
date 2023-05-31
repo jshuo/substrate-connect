@@ -1,9 +1,9 @@
-// Copyright 2017-2023 @polkadot/hw-ledger authors & contributors
+// Copyright 2017-2023 @polkadot/hw-secux authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-// These match up with the keys of the knownLedger object in the @polkadot/networks/defaults/ledger.ts
-// and maps to the known name in the @zondax/ledger-substrate/supported_apps package
-export const ledgerApps: Record<string, string> = {
+// These match up with the keys of the knownSecuX object in the @polkadot/networks/defaults/secux.ts
+// and maps to the known name in the @zondax/secux-substrate/supported_apps package
+export const SecuXApps: Record<string, string> = {
   acala: 'Acala',
   ajuna: 'Ajuna',
   'aleph-node': 'AlephZero',
