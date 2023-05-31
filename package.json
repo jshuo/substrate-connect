@@ -14,16 +14,16 @@
   },
   "sideEffects": false,
   "type": "module",
-  "version": "12.2.2-6-x",
+  "version": "12.2.2-7-x",
   "versions": {
-    "git": "12.2.2-6-x",
+    "git": "12.2.2-7-x",
     "npm": "12.2.1"
   },
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
-    "build": "polkadot-dev-build-ts",
+    "build": "polkadot-dev-build-ts && cp -R ./packages/hw-secux/build/. ../azero/node_modules/@polkadot/hw-secux",
     "build:networks": "polkadot-dev-run-test packages/networks/src",
     "build:release": "polkadot-ci-ghact-build",
     "build:rollup": "polkadot-exec-rollup --config",
