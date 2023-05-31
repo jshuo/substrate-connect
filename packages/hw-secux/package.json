@@ -1,26 +1,28 @@
 {
   "author": "Jaco Greeff <jacogr@gmail.com>",
   "bugs": "https://github.com/polkadot-js/common/issues",
-  "description": "A cross-environment BigInt replacement",
   "engines": {
     "node": ">=16"
   },
-  "homepage": "https://github.com/polkadot-js/common/tree/master/packages/x-bigint#readme",
+  "homepage": "https://github.com/polkadot-js/common/tree/master/packages/hw-secux#readme",
   "license": "Apache-2.0",
-  "name": "@polkadot/x-bigint",
+  "name": "@polkadot/hw-secux",
   "repository": {
-    "directory": "packages/x-bigint",
+    "directory": "packages/hw-secux",
     "type": "git",
     "url": "https://github.com/polkadot-js/common.git"
   },
   "sideEffects": [
-    "./shim.js",
-    "./shim.cjs"
+    "./detectPackage.js",
+    "./detectPackage.cjs"
   ],
   "type": "module",
   "version": "12.2.2-6-x",
+  "main": "index.js",
   "dependencies": {
-    "@polkadot/x-global": "12.2.2-6-x",
+    "@polkadot/hw-ledger-transports": "12.2.2-6-x",
+    "@polkadot/util": "12.2.2-6-x",
+    "@zondax/ledger-substrate": "^0.40.7",
     "tslib": "^2.5.2"
   }
 }

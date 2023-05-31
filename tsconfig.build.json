@@ -4,6 +4,8 @@
   },
   "files": [],
   "references": [
+    { "path": "./packages/hw-secux/tsconfig.build.json" },
+    { "path": "./packages/hw-secux/tsconfig.spec.json" },
     { "path": "./packages/hw-ledger/tsconfig.build.json" },
     { "path": "./packages/hw-ledger/tsconfig.spec.json" },
     { "path": "./packages/hw-ledger-transports/tsconfig.build.json" },

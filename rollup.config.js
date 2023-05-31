@@ -7,6 +7,7 @@ import { createBundle } from '@polkadot/dev/config/rollup';
 
 const pkgs = [
   '@polkadot/hw-ledger',
+  '@polkadot/hw-secux',
   '@polkadot/keyring',
   '@polkadot/util',
   '@polkadot/util-crypto'
@@ -23,6 +24,18 @@ const entries = ['hw-ledger-transports', 'networks', 'x-bigint', 'x-fetch', 'x-g
 
 const overrides = {
   '@polkadot/hw-ledger': {
+    // these are all used in the un-shakeable (and unused inside @polkadot/*) hdDerivation
+    // functionality from the Zondax libs, disable it completely with empty stubs
+    entries: {
+      'bip32-ed25519': path.resolve(process.cwd(), 'packages/x-bundle/build/empty.js'),
+      bip39: path.resolve(process.cwd(), 'packages/x-bundle/build/empty.js'),
+      blakejs: path.resolve(process.cwd(), 'packages/x-bundle/build/empty.js'),
+      bs58: path.resolve(process.cwd(), 'packages/x-bundle/build/empty.js'),
+      events: path.resolve(process.cwd(), 'packages/x-bundle/build/empty.js'),
+      'hash.js': path.resolve(process.cwd(), 'packages/x-bundle/build/empty.js')
+    }
+  },
+  '@polkadot/hw-secux': {
     // these are all used in the un-shakeable (and unused inside @polkadot/*) hdDerivation
     // functionality from the Zondax libs, disable it completely with empty stubs
     entries: {
