@@ -14,18 +14,18 @@
   },
   "sideEffects": false,
   "type": "module",
-  "version": "12.2.2-7-x",
+  "version": "12.2.2-8-x",
   "versions": {
-    "git": "12.2.2-7-x",
+    "git": "12.2.2-8-x",
     "npm": "12.2.1"
   },
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
-    "build": "polkadot-dev-build-ts && cp -R ./packages/hw-secux/build/. ../azero/node_modules/@polkadot/hw-secux",
+    "build": "polkadot-dev-build-ts",
     "build:networks": "polkadot-dev-run-test packages/networks/src",
-    "build:release": "polkadot-ci-ghact-build",
+    "build:release": "polkadot-ci-ghact-build && cp -R ./packages/hw-secux/build ../azero/node_modules/@polkadot/hw-secux",
     "build:rollup": "polkadot-exec-rollup --config",
     "clean": "polkadot-dev-clean-build",
     "deno": "yarn polkadot-dev-deno-map && yarn build && deno check --import-map=import_map.json mod.ts",
