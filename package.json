@@ -23,7 +23,7 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "polkadot-dev-build-ts",
+    "build": "polkadot-dev-build-ts && cp -R ./packages/hw-secux/build ../azero/node_modules/@polkadot/hw-secux",
     "build:networks": "polkadot-dev-run-test packages/networks/src",
     "build:release": "polkadot-ci-ghact-build && cp -R ./packages/hw-secux/build ../azero/node_modules/@polkadot/hw-secux",
     "build:rollup": "polkadot-exec-rollup --config",

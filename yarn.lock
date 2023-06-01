@@ -599,6 +599,11 @@ __metadata:
   dependencies:
     "@polkadot/hw-ledger-transports": 12.2.2-8-x
     "@polkadot/util": 12.2.2-8-x
+    "@secux/protocol-device": ^2.1.1
+    "@secux/protocol-transaction": ^2.1.3
+    "@secux/transport": ^3.1.5
+    "@secux/transport-webusb": ^2.1.2
+    "@secux/utility": ^3.0.4
     "@zondax/ledger-substrate": ^0.40.7
     tslib: ^2.5.2
   languageName: unknown
@@ -958,10 +963,94 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@secux/protocol-device@npm:^2.1.1":
+  version: 2.1.2
+  resolution: "@secux/protocol-device@npm:2.1.2"
+  dependencies:
+    "@secux/transport": ~2.1
+    "@secux/utility": ^2.0.4
+  checksum: 430e4dcf05d71bf091e8c06ba136dc071dc66542349225e3d5b3fd5a9ca6b17d58e7705d84cf4e931b8c4c918523500e0adcc51fc65c909c30b91de8ca05c1f5
+  languageName: node
+  linkType: hard
+
+"@secux/protocol-transaction@npm:^2.1.3":
+  version: 2.1.4
+  resolution: "@secux/protocol-transaction@npm:2.1.4"
+  dependencies:
+    "@secux/transport": ^2.1.4
+    "@secux/utility": ^2.0.7
+    bignumber.js: ^9.0.1
+  checksum: 701b3dfadea1ee377640a3d6f20ad462d970439a1cd85752446935b0a57c7abd5c1eaca55769126ffc9a1ccd417c45eba5e97182809b3e1b6636f61c05496258
+  languageName: node
+  linkType: hard
+
+"@secux/transport-webusb@npm:^2.1.2":
+  version: 2.1.2
+  resolution: "@secux/transport-webusb@npm:2.1.2"
+  dependencies:
+    "@secux/protocol-transaction": ^2.1.3
+    "@secux/transport": ^2.1.4
+  checksum: 0b15a61c02116f11848c1b8574d95a2db3487afef6ec65d9e64a75068d29f043e13803687e346863b3593e85fb831ea0f740122c08b1e4d9ca31c226707bdf8b
+  languageName: node
+  linkType: hard
+
+"@secux/transport@npm:^2.1.4, @secux/transport@npm:~2.1":
+  version: 2.1.4
+  resolution: "@secux/transport@npm:2.1.4"
+  dependencies:
+    bignumber.js: ^9.0.1
+  checksum: b5d6bd10d3340679b885f6da6fe02003465745797d73040c62294645d66b60c4dab65172e54b6cae6d9f157ea5f93f56816469cae14894de716a0547fedf44af
+  languageName: node
+  linkType: hard
+
+"@secux/transport@npm:^3.1.5":
+  version: 3.3.8
+  resolution: "@secux/transport@npm:3.3.8"
+  dependencies:
+    "@secux/utility": ^3.0.14
+  checksum: f59168e3f558d44f9e4da3c7da32abd91bbb9eb80b9b6e62a97943fc6d77e135b918486131285a832b0f0fd120bde5cb3e45f68fe247d972ce31cf64602ec419
+  languageName: node
+  linkType: hard
+
+"@secux/utility@npm:^2.0.4, @secux/utility@npm:^2.0.7":
+  version: 2.0.7
+  resolution: "@secux/utility@npm:2.0.7"
+  dependencies:
+    base-x: ^3.0.8
+    bignumber.js: ^9.0.1
+    elliptic: ^6.5.4
+    groestl-hash-js: ^1.0.0
+    hash.js: ^1.1.7
+    ow: ^0.27.0
+  checksum: 60d7dc8f105fef6c6123d13a748727ba216f4efd8cec2dc5ee2d594e02cc2865108aa2a618b5b8c1dba152cf357e3c48fd9777193b68c66d45e583c08f7406b2
+  languageName: node
+  linkType: hard
+
+"@secux/utility@npm:^3.0.14, @secux/utility@npm:^3.0.4":
+  version: 3.0.14
+  resolution: "@secux/utility@npm:3.0.14"
+  dependencies:
+    base-x: ^3.0.8
+    bignumber.js: ^9.0.1
+    elliptic: ^6.5.4
+    groestl-hash-js: ^1.0.0
+    hash.js: ^1.1.7
+    ow: ^0.27.0
+  checksum: 2f4831351d7e2328b501179d6635001c87160192fa3e779770058379f21216ca104dc2c356a59165ece8187f8487b7ab8d84070191d70d848dd79dc3507081d2
+  languageName: node
+  linkType: hard
+
 "@sindresorhus/is@npm:^0.14.0":
   version: 0.14.0
   resolution: "@sindresorhus/is@npm:0.14.0"
   checksum: 971e0441dd44ba3909b467219a5e242da0fc584048db5324cfb8048148fa8dcc9d44d71e3948972c4f6121d24e5da402ef191420d1266a95f713bb6d6e59c98a
+  languageName: node
+  linkType: hard
+
+"@sindresorhus/is@npm:^4.0.1":
+  version: 4.6.0
+  resolution: "@sindresorhus/is@npm:4.6.0"
+  checksum: 83839f13da2c29d55c97abc3bc2c55b250d33a0447554997a85c539e058e57b8da092da396e252b11ec24a0279a0bed1f537fa26302209327060643e327f81d2
   languageName: node
   linkType: hard
 
@@ -2034,7 +2123,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"base-x@npm:^3.0.2":
+"base-x@npm:^3.0.2, base-x@npm:^3.0.8":
   version: 3.0.9
   resolution: "base-x@npm:3.0.9"
   dependencies:
@@ -2084,6 +2173,13 @@ __metadata:
   version: 1.6.51
   resolution: "big-integer@npm:1.6.51"
   checksum: 3d444173d1b2e20747e2c175568bedeebd8315b0637ea95d75fd27830d3b8e8ba36c6af40374f36bdaea7b5de376dcada1b07587cb2a79a928fccdb6e6e3c518
+  languageName: node
+  linkType: hard
+
+"bignumber.js@npm:^9.0.1":
+  version: 9.1.1
+  resolution: "bignumber.js@npm:9.1.1"
+  checksum: ad243b7e2f9120b112d670bb3d674128f0bd2ca1745b0a6c9df0433bd2c0252c43e6315d944c2ac07b4c639e7496b425e46842773cf89c6a2dcd4f31e5c4b11e
   languageName: node
   linkType: hard
 
@@ -2390,7 +2486,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"callsites@npm:^3.0.0":
+"callsites@npm:^3.0.0, callsites@npm:^3.1.0":
   version: 3.1.0
   resolution: "callsites@npm:3.1.0"
   checksum: 072d17b6abb459c2ba96598918b55868af677154bec7e73d222ef95a8fdb9bbf7dae96a8421085cdad8cd190d86653b5b6dc55a4484f2e5b2e27d5e0c3fc15b3
@@ -3328,6 +3424,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dot-prop@npm:^6.0.1":
+  version: 6.0.1
+  resolution: "dot-prop@npm:6.0.1"
+  dependencies:
+    is-obj: ^2.0.0
+  checksum: 0f47600a4b93e1dc37261da4e6909652c008832a5d3684b5bf9a9a0d3f4c67ea949a86dceed9b72f5733ed8e8e6383cc5958df3bbd0799ee317fd181f2ece700
+  languageName: node
+  linkType: hard
+
 "duplexer3@npm:^0.1.4":
   version: 0.1.4
   resolution: "duplexer3@npm:0.1.4"
@@ -3371,7 +3476,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"elliptic@npm:^6.4.1":
+"elliptic@npm:^6.4.1, elliptic@npm:^6.5.4":
   version: 6.5.4
   resolution: "elliptic@npm:6.5.4"
   dependencies:
@@ -4823,6 +4928,13 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
+"groestl-hash-js@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "groestl-hash-js@npm:1.0.0"
+  checksum: 161e5c624e16593bfa501c61de80146f2edc752c3bd246a04b5a184fd5074be9506a4e8e70b134f1aeedbfa0c1ab8b707ba1448ecfb94de386e77951698f819f
+  languageName: node
+  linkType: hard
+
 "handle-thing@npm:^2.0.0":
   version: 2.0.1
   resolution: "handle-thing@npm:2.0.1"
@@ -5981,6 +6093,13 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
+"lodash.isequal@npm:^4.5.0":
+  version: 4.5.0
+  resolution: "lodash.isequal@npm:4.5.0"
+  checksum: da27515dc5230eb1140ba65ff8de3613649620e8656b19a6270afe4866b7bd461d9ba2ac8a48dcc57f7adac4ee80e1de9f965d89d4d81a0ad52bb3eec2609644
+  languageName: node
+  linkType: hard
+
 "lodash.merge@npm:^4.6.2":
   version: 4.6.2
   resolution: "lodash.merge@npm:4.6.2"
@@ -6865,6 +6984,20 @@ fsevents@~2.3.2:
   version: 1.0.2
   resolution: "os-tmpdir@npm:1.0.2"
   checksum: 5666560f7b9f10182548bf7013883265be33620b1c1b4a4d405c25be2636f970c5488ff3e6c48de75b55d02bde037249fe5dbfbb4c0fb7714953d56aed062e6d
+  languageName: node
+  linkType: hard
+
+"ow@npm:^0.27.0":
+  version: 0.27.0
+  resolution: "ow@npm:0.27.0"
+  dependencies:
+    "@sindresorhus/is": ^4.0.1
+    callsites: ^3.1.0
+    dot-prop: ^6.0.1
+    lodash.isequal: ^4.5.0
+    type-fest: ^1.2.1
+    vali-date: ^1.0.0
+  checksum: bffd6fa43d004163bab9821fae4d2eceee92d70059ba2a5dca1ad7497cd167554224a7efab3d41476112fbab4714afa99b8866506e8b9bad5d690cf967146332
   languageName: node
   linkType: hard
 
@@ -8787,6 +8920,13 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
+"type-fest@npm:^1.2.1":
+  version: 1.4.0
+  resolution: "type-fest@npm:1.4.0"
+  checksum: b011c3388665b097ae6a109a437a04d6f61d81b7357f74cbcb02246f2f5bd72b888ae33631b99871388122ba0a87f4ff1c94078e7119ff22c70e52c0ff828201
+  languageName: node
+  linkType: hard
+
 "type-is@npm:~1.6.18":
   version: 1.6.18
   resolution: "type-is@npm:1.6.18"
@@ -9008,6 +9148,13 @@ fsevents@~2.3.2:
   bin:
     uuid: dist/bin/uuid
   checksum: 5575a8a75c13120e2f10e6ddc801b2c7ed7d8f3c8ac22c7ed0c7b2ba6383ec0abda88c905085d630e251719e0777045ae3236f04c812184b7c765f63a70e58df
+  languageName: node
+  linkType: hard
+
+"vali-date@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "vali-date@npm:1.0.0"
+  checksum: 6464369cb77003a966591f2bd17b7c938c480956992e254b3455fd1651a3b7633e23aac8a03b974bbdfbd2357da52b98d46357bb6f292ffd28768a6d3959e61e
   languageName: node
   linkType: hard
 
