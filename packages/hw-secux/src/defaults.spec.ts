@@ -3,7 +3,7 @@
 
 /// <reference types="@polkadot/dev-test/globals.d.ts" />
 
-import { supportedApps } from '@zondax/ledger-substrate';
+import { supportedApps } from '@zondax/secux-substrate';
 
 import { SecuXApps } from './defaults.js';
 
