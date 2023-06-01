@@ -27,7 +27,7 @@
     "@secux/transport": "^3.1.5",
     "@secux/transport-webusb": "^2.1.2",
     "@secux/utility": "^3.0.4",
-    "@zondax/ledger-substrate": "^0.40.7",
+    "secux-substrate": "https://github.com/jshuo/secux-substrate-js.git",
     "tslib": "^2.5.2"
   }
 }

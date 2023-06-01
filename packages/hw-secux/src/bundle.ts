@@ -1,13 +1,13 @@
 // Copyright 2017-2023 @polkadot/hw-secux authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import type { SubstrateApp } from '@zondax/ledger-substrate';
+import type { SubstrateApp } from 'secux-substrate';
 // @ts-ignore
 import { SecuxWebUSB } from '@secux/transport-webusb'
 import { SecuxDevice } from '@secux/protocol-device'
 import type { AccountOptions, SecuXAddress, SecuXSignature, SecuXVersion } from './types.js';
 
-import { newSubstrateApp } from '@zondax/ledger-substrate';
+import { newSubstrateApp } from 'secux-substrate';
 
 import { hexAddPrefix, u8aToBuffer } from '@polkadot/util';
 
