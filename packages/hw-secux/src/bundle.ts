@@ -11,7 +11,7 @@ import { newSubstrateApp } from 'secux-substrate';
 
 import { hexAddPrefix, u8aToBuffer } from '@polkadot/util';
 
-import { SECUX_DEFAULT_ACCOUNT, SECUX_DEFAULT_CHANGE, SECUX_DEFAULT_INDEX, SECUX_SUCCESS_CODE } from './constants.js';
+import { SECUX_DEFAULT_ACCOUNT, SECUX_DEFAULT_CHANGE, SECUX_DEFAULT_INDEX } from './constants.js';
 import { SecuXApps } from './defaults.js';
 
 export { packageInfo } from './packageInfo.js';
@@ -23,11 +23,6 @@ type WrappedResult = Awaited<ReturnType<SubstrateApp['getAddress' | 'getVersion'
 /** @internal Wraps a SubstrateApp call, checking the result for any errors which result in a rejection */
 async function wrapError <T extends WrappedResult> (promise: Promise<T>): Promise<T> {
   const result = await promise;
-
-  if (result.return_code !== SECUX_SUCCESS_CODE) {
-    throw new Error(result.error_message);
-  }
-
   return result;
 }
 
@@ -81,11 +76,11 @@ export class SecuX {
   public async sign (message: Uint8Array, accountOffset = 0, addressOffset = 0, { account = SECUX_DEFAULT_ACCOUNT, addressIndex = SECUX_DEFAULT_INDEX, change = SECUX_DEFAULT_CHANGE }: Partial<AccountOptions> = {}): Promise<SecuXSignature> {
     return this.withApp(async (app: SubstrateApp): Promise<SecuXSignature> => {
       const buffer = u8aToBuffer(message);
-      const { signature } = await wrapError(app.sign(account + accountOffset, change, addressIndex + addressOffset, buffer));
-
+      const signature  = await wrapError(app.sign(account + accountOffset, change, addressIndex + addressOffset, buffer));
       return {
-        signature: hexAddPrefix(signature.toString('hex'))
+        signature: hexAddPrefix(signature.toString())
       };
+
     });
   }
 
@@ -98,13 +93,11 @@ export class SecuX {
   async withApp <T> (fn: (app: SubstrateApp) => Promise<T>): Promise<T> {
     try {
       if (!this.#app) {
-        const transport =  await SecuxWebUSB.Create(
-          () => console.log('connected'),
-          async () => {
-              console.log('disconnected')
-          }
-      )
-
+        const transport = await SecuxWebUSB.Create(
+          () => console.log("connected"),
+          () => console.log("disconnected")
+      );
+      await transport.Connect();
         this.#app = newSubstrateApp(transport, this.#secuxName);
       }
 

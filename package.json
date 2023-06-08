@@ -23,7 +23,7 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "polkadot-dev-build-ts && cp -R ./packages/hw-secux/build ../azero/node_modules/@polkadot/hw-secux",
+    "build": "polkadot-dev-build-ts && rm -rf ../azero/node_modules/@polkadot/util-crypto/ed25519 && rm -rf ../azero/node_modules/@polkadot/hw-secux && cp -R ./packages/hw-secux/build ../azero/node_modules/@polkadot/hw-secux && cp -R packages/util-crypto/build/ed25519/ ../azero/node_modules/@polkadot/util-crypto/ed25519",
     "build:networks": "polkadot-dev-run-test packages/networks/src",
     "build:release": "polkadot-ci-ghact-build && cp -R ./packages/hw-secux/build ../azero/node_modules/@polkadot/hw-secux",
     "build:rollup": "polkadot-exec-rollup --config",
@@ -31,6 +31,7 @@
     "deno": "yarn polkadot-dev-deno-map && yarn build && deno check --import-map=import_map.json mod.ts",
     "lint": "polkadot-dev-run-lint",
     "postinstall": "polkadot-dev-yarn-only",
+    "rmsecux": "rm -rf ../azero/node_modules/@polkadot/util-crypto/ed25519 && rm -rf ../azero/node_modules/@polkadot/hw-secux",
     "test": "polkadot-dev-run-test --env browser ^mnemonic/toMiniSecretCmp",
     "test:mnemonicCmp": "polkadot-dev-run-test --env browser mnemonic/toMiniSecretCmp",
     "test:node": "polkadot-dev-run-test --env browser ^mnemonic/toMiniSecretCmp",
